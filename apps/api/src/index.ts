@@ -4,6 +4,7 @@ import { env } from './config/env'
 import { router as api } from './routes'
 
 const app = express()
+app.use(express.json())
 
 app.use('/api', api)
 
