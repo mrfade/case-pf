@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import { router as auth } from './modules/auth/routes'
+import { router as categories } from './modules/categories/routes'
 
 export const router = Router()
 
@@ -8,3 +9,4 @@ router.get('/health', (req, res) => {
 })
 
 router.use('/auth', auth)
+router.use('/categories', categories)
