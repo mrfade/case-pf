@@ -42,12 +42,16 @@ router.get('/', async (req, res) => {
     Product.countDocuments(filter)
   ])
 
+  const totalPages = Math.ceil(total / pageSize)
+
   res.json({
     data,
-    page,
-    pageSize,
-    total,
-    totalPages: Math.ceil(total / pageSize)
+    pagination: {
+      page,
+      pageSize,
+      total,
+      totalPages
+    }
   })
 })
 
